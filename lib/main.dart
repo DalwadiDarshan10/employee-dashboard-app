@@ -8,9 +8,17 @@ import 'core/constants/app_colors.dart';
 import 'core/constants/app_strings.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init();
-  runApp(const MyApp());
+  try {
+    WidgetsFlutterBinding.ensureInitialized();
+    debugPrint('Initializing GetStorage...');
+    await GetStorage.init();
+    debugPrint('Initialization complete. Starting app...');
+    runApp(const MyApp());
+  } catch (e, stackTrace) {
+    debugPrint('Error during initialization: $e');
+    debugPrint(stackTrace.toString());
+    runApp(const MyApp());
+  }
 }
 
 class MyApp extends StatelessWidget {

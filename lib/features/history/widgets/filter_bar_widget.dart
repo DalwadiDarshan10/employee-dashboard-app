@@ -11,12 +11,12 @@ class FilterBarWidget extends StatelessWidget {
   final Function(String) onStatusChanged;
 
   const FilterBarWidget({
-    Key? key,
+    super.key,
     required this.selectedTime,
     required this.selectedStatus,
     required this.onTimeChanged,
     required this.onStatusChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

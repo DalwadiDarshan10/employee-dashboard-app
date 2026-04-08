@@ -1,5 +1,5 @@
 import 'package:employee_dashboard_application/features/dashboard/models/dashboard_model.dart';
-import '../../../core/network/api_service.dart';
+import '../core/network/api_service.dart';
 
 class DashboardRepository {
   final ApiService _apiService;
